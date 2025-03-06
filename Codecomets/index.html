@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizens Voice - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.20.12/babel.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        .welcome {
+            display: none; /* Initially hidden */
+        }
+        .show {
+            display: block; /* Show when needed */
+        }
+        body {
+            height: 200vh; /* Ensure there's enough height to scroll */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <section class="welcome" id="welcome-section">
+        <h2>Welcome to Citizens Voice</h2>
+        <p>Our application allows citizens to submit complaints regarding various municipal services. We aim to ensure that your concerns are heard and addressed effectively.</p>
+        
+        <h3>Available Departments</h3>
+        <div class="departments-container">
+            <div class="department-card" title="Public Works">
+                <span class="department-icon">🏗️</span>
+                <h4>Public Works</h4>
+            </div>
+            <div class="department-card" title="Water & Sanitation">
+                <span class="department-icon">💧</span>
+                <h4>Water & Sanitation</h4>
+            </div>
+            <div class="department-card" title="Health & Safety">
+                <span class="department-icon">🏥</span>
+                <h4>Health & Safety</h4>
+            </div>
+            <div class="department-card" title="Environment">
+                <span class="department-icon">🌳</span>
+                <h4>Environment</h4>
+            </div>
+            <div class="department-card" title="Emergency Services">
+                <span class="department-icon">🚨</span>
+                <h4>Emergency Services</h4>
+            </div>
+            <div class="department-card" title="Municipal Services">
+                <span class="department-icon">🏛️</span>
+                <h4>Municipal Services</h4>
+            </div>
+            <div class="department-card" title="Education">
+                <span class="department-icon">📚</span>
+                <h4>Education</h4>
+            </div>
+            <div class="department-card" title="Transportation">
+                <span class="department-icon">🚌</span>
+                <h4>Transportation</h4>
+            </div>
+            <div class="department-card" title="Social Welfare">
+                <span class="department-icon">🤝</span>
+                <h4>Social Welfare</h4>
+            </div>
+        </div>
+
+        <h3>How to Submit a Complaint</h3>
+        <div class="steps-container">
+            <div class="step-card">
+                <h4>1. Select Department</h4>
+                <p>Select the department related to your complaint.</p>
+            </div>
+            <div class="step-card">
+                <h4>2. Choose Category</h4>
+                <p>Choose a category that best describes your issue.</p>
+            </div>
+            <div class="step-card">
+                <h4>3. Provide Description</h4>
+                <p>Provide a detailed description of your complaint.</p>
+            </div>
+            <div class="step-card">
+                <h4>4. Enter Location</h4>
+                <p>Enter your location for better assistance.</p>
+            </div>
+            <div class="step-card">
+                <h4>5. Upload Media</h4>
+                <p>Optionally, upload any images or videos related to your complaint.</p>
+            </div>
+            <div class="step-card">
+                <h4>6. Submit</h4>
+                <p>Click on the "Submit Complaint" button to send your complaint.</p>
+            </div>
+        </div>
+    </section>
+    
+    <script type="text/babel" src="login.js"></script>
+    <script>
+        // Show the welcome section after scrolling
+        window.addEventListener('scroll', function() {
+            const welcomeSection = document.getElementById('welcome-section');
+            if (window.scrollY > 0) {
+                welcomeSection.classList.add('show');
+            }
+        });
+    </script>
+</body>
+</html>
